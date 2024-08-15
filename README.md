@@ -1,51 +1,15 @@
+# Тестовый репозиторий для практики с Pull Request в GitHub
 
-import java.util.Scanner;
+Этот репозиторий - ПП
 
-public class Main {
-    public static void main(String[] args) {
-        String leadName="";
-        Car[] cars = new Car[3];
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < cars.length; i++) {
-            System.out.println("Введите название машины №" + (i + 1));
-            String name = scanner.next();
-            System.out.println("Введите скорость машины №" + (i + 1));
-            int speed=scanner.nextInt();
-            if (speed<=0 || speed>=250) {
-                while (speed<=0 || speed>=250) {
-                    System.out.println("Неверная скорость, попробуйте ещё раз");
-                    System.out.println("Введите скорость машины №" + (i + 1));
-                    speed = scanner.nextInt();
-                }
-            }
-            cars[i]= new Car(name, speed);
-        }
-        System.out.println("Самая быстрая машина: "+Race.leader(cars));
+## Как этим пользоваться?
 
-    }
-}
-class Car{
-    String nameCar;
-    int speedCar;
-    public Car(String name, int speed){
-        this.nameCar= name;
-        this.speedCar=speed;
-    }
-}
-class Race{
-    String carLider="";
-    int distance=0;
-    public static String leader(Car[] cars){
-        String carLider="";
-        int distanceMax=0;
-        int time =24;
-        for (int i = 0; i< cars.length; i++){
-            int distanceCar= cars[i].speedCar * time;
-            if (cars[i].speedCar>distanceMax){
-                distanceMax=cars[i].speedCar;
-                carLider=cars[i].nameCar;
-            }
-        }
-        return carLider;
-    }
-}
+Этот репозиторий помогает понять как можно создавать Pull Request и сдавать домашние задания в Яндекс.Практикуме.
+В самом репозитории присутствует ветка - `main`. Ветку `dev` нужно создать самостоятельно. Студенту следует создавать Pull Request из ветки `dev` в ветку `main`. Итого, порядок сдачи таков:
+1. Сделать `Fork` репозитория
+2. "Склонить" репозиторий на свой компьютер
+3. Создать ветку `dev`
+4. Изменить содержимое `dev` ветки
+5. "Закоммитить" изменения
+6. "Запушить" коммиты
+7. Создать Pull Request посредством веб-интерфейса GitHub
